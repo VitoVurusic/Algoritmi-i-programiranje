@@ -1,0 +1,26 @@
+#include<iostream>
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+using namespace std;
+
+int main() {
+	string rijec = "danasjeodlicandan";
+	
+	while (1) {
+		bool gotovo = 1;
+		for (int i = 0; rijec[i + 1] != '\0'; i++) {
+			if (rijec[i] > rijec[i+1]) {
+				gotovo = 0;
+				int pomocna = rijec[i];
+				rijec[i] = rijec[i + 1];
+				rijec[i + 1] = pomocna;
+			}
+		}
+		if (gotovo == 1)
+			break;
+	}
+	for (int i = 0; rijec[i] != '\0'; i++) {
+		cout << rijec[i];
+	}
+}
