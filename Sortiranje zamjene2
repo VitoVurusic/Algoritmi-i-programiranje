@@ -1,0 +1,42 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+
+int main()
+{
+    int p[20];
+
+    for (int i = 0; i < 20; i++) {
+        p[i] = rand() % 100 - 50;
+    }
+
+    int n;
+    int t;
+
+    for (int i = 0; i < 20; i++) {
+        n = i;
+        t = i;
+
+        int gotovo = 1;
+
+        for (t; t < 20; t++) {
+            if (p[n] > p[t]) {
+                n = t;
+                gotovo = 0;
+            }
+
+            int pomocna;
+            pomocna = p[i];
+            p[i] = p[n];
+            p[n] = pomocna;
+
+        }
+        if (gotovo == 1)
+            break;
+
+        for (int j = 0; j < 20; j++) {
+            cout << p[j] << " ";
+        }
+        cout << endl;
+    }
+}
