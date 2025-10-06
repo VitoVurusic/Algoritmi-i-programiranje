@@ -1,0 +1,35 @@
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+	int broj = 20;
+	int p[10] = { 1, 20 , 30, 33, 44, 59 , 90, 100, 111, 123 };
+	int d=0;
+	int g=9;
+	bool gotovo = 0;
+
+	while (1) {
+		int s = (d + g) / 2;
+
+		if (p[s] == broj) {
+			gotovo = 1;
+			break;
+		}
+
+		if (d > g) {
+			break;
+		}
+
+		if (broj > p[s]) {
+			d = s+1;
+		}
+
+		if (broj < p[s])
+			g = s-1;
+			
+	}
+	cout << gotovo;
+}
